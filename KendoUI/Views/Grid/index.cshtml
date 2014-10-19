@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+
+@model IEnumerable<KendoUI.Models.Movie>
+
+<div id="repairsGrid"></div>
+<div id="movie"></div>
+
+
+@*<script type="text/javascript">
+    var repairs = [{
+        name: "State Inspection",
+        price: 39.75,
+        labor: 1,
+        staff: 1
+    },
+     {
+         name: "Brake & Clutch System Service",
+         price: 149.95,
+         labor: 3,
+         staff: 1
+     },
+     {
+         name: "Power Steering Service",
+         price: 109.96,
+         labor: 3,
+         staff: 1
+     },
+     {
+         name: "Cooling System Service",
+         price: 126.95,
+         labor: 2,
+         staff: 1
+     },
+     {
+         name: "Oil Change",price: 37.77,
+         labor: 1,
+         staff: 1
+     },
+ {
+     name: "CV Axle Replacement",
+     price: 271.11,
+     labor: 5,
+     staff: 2
+ },
+ {
+     name: "Battery Cabling Replacement",
+     price: 179.97,
+     labor: 2,
+     staff: 1
+ },
+ {
+     name: "Battery Replacement",
+     price: 118.38,
+     labor: 1,
+     staff: 1
+ },
+ {
+     name: "Fuel Induction Service",
+     price: 168.88,
+     labor: 3,
+     staff: 2
+ },
+ {
+     name: "Engine Air Filter Replacement",
+     price: 36.63,
+     labor: 1,
+     staff: 1
+ },
+ {
+     name: "Timing Belt Replacement",
+     price: 221.75,
+     labor: 3,
+     staff: 2
+ },
+ {
+     name: "Drive Belt Replacement",
+     price: 194.79,
+     labor: 3,
+     staff: 2
+ }
+    ];
+ </script>*@
+            <script type="text/javascript">
+             //$("#repairsGrid").kendoGrid({
+             //    dataSource: repairs
+             //});
+             $.getJSON('api/movie', function (data) {
+
+                 $("#movie").kendoGrid({
+                     autoBind:true,
+                     dataSource: data,
+                     columns: [
+                         {
+                             title: "Action",
+                             width: 50,
+                          
+                             command: [{
+                                 name: "edit", text: {
+                                     edit: "Custom edit",
+                                     cancel: "Custom cancel", update: "Custom update"
+                                 }
+                             }]
+                    
+                               
+                            
+
+                         },
+
+                         {
+                             field:"ID",
+                             title: "ID",
+                             width: 50,
+                             sortable:true,
+                             filterable: true
+                            
+
+                         },
+                         {
+                             field: "Genre",
+                             title: "Film Genre",
+                             width: 50,
+                             sortable: true,
+                             filterable: true,
+                             
+
+                         }
+                         ,
+                         {
+                             field: "Title",
+                             title: "Film Title",
+                             width:50,
+                             sortable: true,
+                          
+                         },
+                         {
+                             field: "Year",
+                             title: "From",
+                             width: 50
+                            
+                         }
+                     ],
+                     sortable: true,
+                     filterable: true,
+                     navigatable: true,
+                     editable: { mode:"inline"},
+                     groupable: {
+                         messages: {
+                             empty: "Drag column header here for grouping"
+                         }
+                     }
+                 });
+
+             })
+             
+
+   </script>
+
+
+
+  
+
+
+
+
+
