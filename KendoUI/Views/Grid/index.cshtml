@@ -93,28 +93,14 @@
                      autoBind:true,
                      dataSource: data,
                      columns: [
-                         {
-                             title: "Action",
-                             width: 50,
-                          
-                             command: [{
-                                 name: "edit", text: {
-                                     edit: "Custom edit",
-                                     cancel: "Custom cancel", update: "Custom update"
-                                 }
-                             }]
-                    
-                               
-                            
-
-                         },
+                       
 
                          {
                              field:"ID",
                              title: "ID",
                              width: 50,
-                             sortable:true,
-                             filterable: true
+                             sortable:false,
+                             filterable:false
                             
 
                          },
@@ -140,6 +126,17 @@
                              title: "From",
                              width: 50
                             
+                         },
+                         {
+                             title: "Action",
+                             width: 50,
+                             command: [{
+                                 name: "edit",
+                                 text: { edit: "Custom", cancel: "Cancel",update:"Update"
+                                 }
+                             }]
+
+
                          }
                      ],
                      sortable: true,
@@ -150,7 +147,13 @@
                          messages: {
                              empty: "Drag column header here for grouping"
                          }
-                     }
+                     },
+                     toolbar: [
+                         "create",
+                         {name: "Save", text: "Save This Record"},
+                         {name:"Cancel", text:"Cancel Changes"}
+
+                     ]
                  });
 
              })
