@@ -4,9 +4,23 @@
 }
 
 @model IEnumerable<KendoUI.Models.Movie>
+@(Html.Kendo().Grid(Model).Name("gridtable").Columns(c=>
+      {
+          c.Bound(movieid=>movieid.ID).Sortable(false).Filterable(false);
+          c.Bound(movietitle=>movietitle.Title).Filterable(true).Sortable(true);
+          c.Bound(moviegenre=>moviegenre.Title).Sortable(true).Filterable(true);
+          c.Bound(moviefrom=>moviefrom.Year).Filterable(true).Sortable(true);
+      }
+    )
+    .Pageable()
+    .Filterable()
 
-<div id="repairsGrid"></div>
-<div id="movie"></div>
+
+    )
+
+
+@*<div id="repairsGrid"></div>
+<div id="movie"></div>*@
 
 
 @*<script type="text/javascript">
@@ -83,7 +97,7 @@
  }
     ];
  </script>*@
-            <script type="text/javascript">
+            @*<script type="text/javascript">
              //$("#repairsGrid").kendoGrid({
              //    dataSource: repairs
              //});
@@ -159,7 +173,7 @@
              })
              
 
-   </script>
+   </script>*@
 
 
 

@@ -24,7 +24,7 @@ namespace KendoUI.Controllers
             MovieList.Add(new Movie(7, "Action", "Dark Country", "2014"));
             MovieList.Add(new Movie(8, "Family", "Far til fire", "2011"));
             MovieList.Add(new Movie(9, "Action", "Jack from New York", "2013"));
-            return View(db.Movies.ToList());
+            return View(db.Movies);
         }
 	}
 }
